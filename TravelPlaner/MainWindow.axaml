@@ -48,6 +48,20 @@
                 </WrapPanel>
             </StackPanel>
             
+            <WrapPanel Margin="0,5">
+                <TextBox x:Name="CityBox" Width="150"/>
+                <Button Content="Dodaj miasto" Click=""/>
+            </WrapPanel>
+
+            <ListBox x:Name="CityList" Height="80"/>
+            
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <TextBlock Text="Data początkowa:" Margin="5"/>
+                <DatePicker x:Name="StartDatePicker" />
+                <TextBlock Text="Data końcowa:" Margin="10,0,5,0"/>
+                <DatePicker x:Name="EndDatePicker"/>
+            </StackPanel>
+            
         </StackPanel>
     </Grid>        
 </Window>
