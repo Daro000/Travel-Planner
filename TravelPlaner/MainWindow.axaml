@@ -11,8 +11,26 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         
-    </Grid>
+
     
-    
-    
+    <TextBlock FontSize="20" FontWeight="Bold" Text="Planner dla podróżujących" Grid.Row="0" Margin="0,0,0,10"></TextBlock>
+        
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="10">
+            <TextBox x:Name="NameBox" Text="Imię i nazwisko" Margin="0,5" ></TextBox>
+            
+            <ComboBox x:Name="CountryComboBox" SelectionChanged="" Margin="0,5">
+                <ComboBoxItem Content="Japonia"/>
+                <ComboBoxItem Content="Włochy"/>
+                <ComboBoxItem Content="USA"/>
+                <ComboBoxItem Content="Norwegia"/>
+                <ComboBoxItem Content="Francja"/>
+                <ComboBoxItem Content="Nigeria"/>
+                <ComboBoxItem Content="Chiny"/>
+                <ComboBoxItem Content="Polska"/>
+            </ComboBox>
+            
+            
+            
+        </StackPanel>
+    </Grid>        
 </Window>
