@@ -18,7 +18,7 @@
         <StackPanel Grid.Row="1" Orientation="Vertical" Margin="10">
             <TextBox x:Name="NameBox" Text="Imię i nazwisko" Margin="0,5" ></TextBox>
             
-            <ComboBox x:Name="CountryComboBox" SelectionChanged="" Margin="0,5">
+            <ComboBox x:Name="CountryComboBox" SelectionChanged="CountryComboBox_SelectionChanged" Margin="0,5">
                 <ComboBoxItem Content="Japonia"/>
                 <ComboBoxItem Content="Włochy"/>
                 <ComboBoxItem Content="USA"/>
@@ -50,7 +50,7 @@
             
             <WrapPanel Margin="0,5">
                 <TextBox x:Name="CityBox" Width="150"/>
-                <Button Content="Dodaj miasto" Click=""/>
+                <Button Content="Dodaj miasto" Click="AddCity_Click"/>
             </WrapPanel>
 
             <ListBox x:Name="CityList" Height="80"/>
@@ -64,7 +64,7 @@
             
             <Image x:Name="CountryImage" Height="150" Stretch="UniformToFill" Margin="0,5"/>
 
-            <Button Content="Pokaż szczegóły podróży" Click="" Margin="0,10"/>
+            <Button Content="Pokaż szczegóły podróży" Click="ShowSummary_Click" Margin="0,10"/>
         </StackPanel>
     </Grid>
 </Window>

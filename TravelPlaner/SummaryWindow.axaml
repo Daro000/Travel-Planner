@@ -9,6 +9,6 @@
     <StackPanel Margin="20" Spacing="10">
         <TextBlock x:Name="SummaryText" FontSize="14" TextWrapping="Wrap"/>
         <Image x:Name="SummaryImage" Height="150"/>
-        <Button Content="Zapisz do pliku" Click=""/>
+        <Button Content="Zapisz do pliku" Click="SaveToFile_Click"/>
     </StackPanel>
 </Window>

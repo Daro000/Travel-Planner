@@ -1,5 +1,9 @@
+using System;
+using System.IO;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Media.Imaging;
+
 
 namespace TravelPlaner
 {
@@ -26,8 +30,15 @@ namespace TravelPlaner
             {
                 FullName = NameBox.Text,
                 Country = (CountryComboBox.SelectedItem as ComboBoxItem)?.Content.ToString(),
-                StartDate = StartDatePicker.SelectedDate ?? DateTime.Today,
-                EndDate = EndDatePicker.SelectedDate ?? DateTime.Today.AddDays(7),
+                
+                StartDate = StartDatePicker.SelectedDate != null
+                    ? new DateTime(StartDatePicker.SelectedDate.Value.Year, StartDatePicker.SelectedDate.Value.Month, StartDatePicker.SelectedDate.Value.Day)
+                    : DateTime.Today,
+                
+                EndDate = EndDatePicker.SelectedDate != null
+                    ? new DateTime(EndDatePicker.SelectedDate.Value.Year, EndDatePicker.SelectedDate.Value.Month, EndDatePicker.SelectedDate.Value.Day)
+                    : DateTime.Today.AddDays(7),
+                
                 ImagePath = CountryImage.Source.ToString()
             };
 
@@ -48,6 +59,20 @@ namespace TravelPlaner
 
             var summaryWindow = new SummaryWindow(trip);
             summaryWindow.Show();
+        }
+
+        private void CountryComboBox_SelectionChanged(object? sender, SelectionChangedEventArgs e)
+        {
+            if (CountryComboBox.SelectedItem is ComboBoxItem selectedItem)
+            {
+                string country = selectedItem.Content?.ToString()?.ToLower() ?? "";
+                string imagePath = $"Images/{country}.jpg"; // np. Images/japonia.jpg
+
+                if (File.Exists(imagePath))
+                {
+                    CountryImage.Source = new Bitmap(imagePath);
+                }
+            }
         }
     }
     
