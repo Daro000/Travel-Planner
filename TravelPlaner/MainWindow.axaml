@@ -16,7 +16,7 @@
     <TextBlock FontSize="20" FontWeight="Bold" Text="Planner dla podróżujących" Grid.Row="0" Margin="0,0,0,10"></TextBlock>
         
         <StackPanel Grid.Row="1" Orientation="Vertical" Margin="10">
-            <TextBox x:Name="NameBox" Text="Imię i nazwisko" Margin="0,5" ></TextBox>
+            <TextBox x:Name="NameBox" Watermark="Imię i nazwisko" Margin="0,5" ></TextBox>
             
             <ComboBox x:Name="CountryComboBox" SelectionChanged="CountryComboBox_SelectionChanged" Margin="0,5">
                 <ComboBoxItem Content="Japonia"/>

@@ -26,10 +26,24 @@ namespace TravelPlaner
 
         private void ShowSummary_Click(object sender, RoutedEventArgs e)
         {
+            
+            Console.WriteLine(NameBox == null ? "NameBox jest null" : "NameBox OK");
+            Console.WriteLine(CountryComboBox == null ? "CountryComboBox jest null" : "CountryComboBox OK");
+            Console.WriteLine(StartDatePicker == null ? "StartDatePicker jest null" : "StartDatePicker OK");
+            Console.WriteLine(EndDatePicker == null ? "EndDatePicker jest null" : "EndDatePicker OK");
+            Console.WriteLine(CountryImage == null ? "CountryImage jest null" : "CountryImage OK");
+            
+            if (CountryComboBox.SelectedItem is not ComboBoxItem selectedItem || selectedItem.Content == null)
+            {
+                Console.WriteLine("Proszę wybrać kraj.");
+                return;
+            }
+            
             var trip = new TripData
             {
                 FullName = NameBox.Text,
-                Country = (CountryComboBox.SelectedItem as ComboBoxItem)?.Content.ToString(),
+                
+                Country = selectedItem.Content.ToString(),
                 
                 StartDate = StartDatePicker.SelectedDate != null
                     ? new DateTime(StartDatePicker.SelectedDate.Value.Year, StartDatePicker.SelectedDate.Value.Month, StartDatePicker.SelectedDate.Value.Day)
