@@ -29,6 +29,14 @@
                 <ComboBoxItem Content="Polska"/>
             </ComboBox>
             
+            <WrapPanel Margin="0,5">
+                <CheckBox Content="Muzea" x:Name="MuseumCheck"/>
+                <CheckBox Content="Parki Narodowe" x:Name="ParksCheck"/>
+                <CheckBox Content="Zabytki" x:Name="MonumentsCheck"/>
+                <CheckBox Content="Restauracje" x:Name="RestaurantsCheck"/>
+                <CheckBox Content="Galerie sztuki" x:Name="GalleriesCheck"/>
+                <CheckBox Content="Festiwale i koncerty" x:Name="FestivalsCheck"/>
+            </WrapPanel>
             
             
         </StackPanel>
