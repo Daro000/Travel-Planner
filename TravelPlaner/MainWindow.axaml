@@ -38,6 +38,15 @@
                 <CheckBox Content="Festiwale i koncerty" x:Name="FestivalsCheck"/>
             </WrapPanel>
             
+            <StackPanel Margin="0,5">
+                <TextBlock Text="Środek transportu:"/>
+                <WrapPanel>
+                    <RadioButton GroupName="Transport" Content="Samolot" x:Name="PlaneRadio"/>
+                    <RadioButton GroupName="Transport" Content="Samochód" x:Name="CarRadio"/>
+                    <RadioButton GroupName="Transport" Content="Pociąg" x:Name="TrainRadio"/>
+                    <RadioButton GroupName="Transport" Content="Statek" x:Name="ShipRadio"/>
+                </WrapPanel>
+            </StackPanel>
             
         </StackPanel>
     </Grid>        
