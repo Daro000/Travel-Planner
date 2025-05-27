@@ -27,33 +27,20 @@ namespace TravelPlaner
         private void ShowSummary_Click(object sender, RoutedEventArgs e)
         {
             
-            Console.WriteLine(NameBox == null ? "NameBox jest null" : "NameBox OK");
-            Console.WriteLine(CountryComboBox == null ? "CountryComboBox jest null" : "CountryComboBox OK");
-            Console.WriteLine(StartDatePicker == null ? "StartDatePicker jest null" : "StartDatePicker OK");
-            Console.WriteLine(EndDatePicker == null ? "EndDatePicker jest null" : "EndDatePicker OK");
-            Console.WriteLine(CountryImage == null ? "CountryImage jest null" : "CountryImage OK");
-            
             if (CountryComboBox.SelectedItem is not ComboBoxItem selectedItem || selectedItem.Content == null)
             {
-                Console.WriteLine("Proszę wybrać kraj.");
                 return;
             }
-            
+
             var trip = new TripData
             {
                 FullName = NameBox.Text,
-                
                 Country = selectedItem.Content.ToString(),
                 
-                StartDate = StartDatePicker.SelectedDate != null
-                    ? new DateTime(StartDatePicker.SelectedDate.Value.Year, StartDatePicker.SelectedDate.Value.Month, StartDatePicker.SelectedDate.Value.Day)
-                    : DateTime.Today,
+                StartDate = StartDatePicker.SelectedDate?.DateTime ?? DateTime.Today,
+                EndDate = EndDatePicker.SelectedDate?.DateTime ?? DateTime.Today.AddDays(7),
                 
-                EndDate = EndDatePicker.SelectedDate != null
-                    ? new DateTime(EndDatePicker.SelectedDate.Value.Year, EndDatePicker.SelectedDate.Value.Month, EndDatePicker.SelectedDate.Value.Day)
-                    : DateTime.Today.AddDays(7),
-                
-                ImagePath = CountryImage.Source.ToString()
+                ImagePath = CountryImage.Source?.ToString() ?? string.Empty
             };
 
             if (MuseumCheck.IsChecked == true) trip.Attractions.Add("Muzea");
@@ -68,8 +55,8 @@ namespace TravelPlaner
                 TrainRadio.IsChecked == true ? "Pociąg" :
                 ShipRadio.IsChecked == true ? "Statek" : "";
 
-            foreach (var item in CityList.Items)
-                trip.Cities.Add(item.ToString());
+            foreach (var city in CityList.Items)
+                trip.Cities.Add(city?.ToString() ?? "");
 
             var summaryWindow = new SummaryWindow(trip);
             summaryWindow.Show();
@@ -80,7 +67,7 @@ namespace TravelPlaner
             if (CountryComboBox.SelectedItem is ComboBoxItem selectedItem)
             {
                 string country = selectedItem.Content?.ToString()?.ToLower() ?? "";
-                string imagePath = $"Images/{country}.jpg"; // np. Images/japonia.jpg
+                string imagePath = $"Images/{country}.jpg";
 
                 if (File.Exists(imagePath))
                 {
