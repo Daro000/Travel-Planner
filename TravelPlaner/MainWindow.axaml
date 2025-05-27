@@ -62,7 +62,7 @@
                 <DatePicker x:Name="EndDatePicker"/>
             </StackPanel>
             
-            <Image x:Name="CountryImage" Height="150" Stretch="UniformToFill" Margin="0,5"/>
+            <Image x:Name="CountryImage" Height="400"  Margin="0,5"/>
 
             <Button Content="Pokaż szczegóły podróży" Click="ShowSummary_Click" Margin="0,10"/>
         </StackPanel>

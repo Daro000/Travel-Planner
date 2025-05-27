@@ -67,7 +67,7 @@ namespace TravelPlaner
             if (CountryComboBox.SelectedItem is ComboBoxItem selectedItem)
             {
                 string country = selectedItem.Content?.ToString()?.ToLower() ?? "";
-                string imagePath = $"Images/{country}.jpg";
+                string imagePath = $"RiderProjects\\TravelPlaner\\TravelPlaner\\Images\\{country}.jpg";
 
                 if (File.Exists(imagePath))
                 {
