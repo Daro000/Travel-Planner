@@ -20,7 +20,7 @@ namespace TravelPlaner
             if (!string.IsNullOrWhiteSpace(CityBox.Text))
             {
                 CityList.Items.Add(CityBox.Text.Trim());
-                CityBox.Clear();
+                CityBox.Text = string.Empty;
             }
         }
 
