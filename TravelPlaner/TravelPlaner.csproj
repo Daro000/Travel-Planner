@@ -24,4 +24,9 @@
     <ItemGroup>
       <Folder Include="bin\Debug\" />
     </ItemGroup>
+    
+    <ItemGroup>
+        <AvaloniaResource Include="Images\**\*.jpg" />
+    </ItemGroup>
+
 </Project>

@@ -3,6 +3,7 @@ using System.IO;
 using Avalonia.Controls;
 using Avalonia.Media.Imaging;
 using Avalonia.Interactivity;
+using Avalonia.Platform;
 
 namespace TravelPlaner
 {
@@ -24,9 +25,17 @@ namespace TravelPlaner
                                $"Termin: {trip.StartDate:dd.MM.yyyy} - {trip.EndDate:dd.MM.yyyy}\n" +
                                $"Szacowany koszt: {trip.EstimateCost():C}";
 
-            if (!string.IsNullOrEmpty(trip.ImagePath) && File.Exists(trip.ImagePath))
+            if (!string.IsNullOrWhiteSpace(trip.ImagePath))
             {
-                SummaryImage.Source = new Bitmap(trip.ImagePath);
+                try
+                {
+                    var uri = new Uri(trip.ImagePath);
+                    SummaryImage.Source = new Bitmap(AssetLoader.Open(uri));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Błąd ładowania obrazu: {ex.Message}");
+                }
             }
         }
 

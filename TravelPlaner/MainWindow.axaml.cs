@@ -3,6 +3,7 @@ using System.IO;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Media.Imaging;
+using Avalonia.Platform;
 
 
 namespace TravelPlaner
@@ -67,11 +68,12 @@ namespace TravelPlaner
             if (CountryComboBox.SelectedItem is ComboBoxItem selectedItem)
             {
                 string country = selectedItem.Content?.ToString()?.ToLower() ?? "";
-                string imagePath = $"RiderProjects\\TravelPlaner\\TravelPlaner\\Images\\{country}.jpg";
+                string assetPath = $"avares://TravelPlaner/Images/{country}.jpg";
+                var uri = new Uri(assetPath);
 
-                if (File.Exists(imagePath))
+                if (AssetLoader.Exists(uri))
                 {
-                    CountryImage.Source = new Bitmap(imagePath);
+                    CountryImage.Source = new Bitmap(AssetLoader.Open(uri));
                 }
             }
         }
