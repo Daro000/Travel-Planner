@@ -19,6 +19,7 @@
             <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
         </PackageReference>
         <PackageReference Include="NodaTime" Version="3.2.2" />
+        <PackageReference Include="wjAvalonia.Themes.Fluent" Version="1.0.7" />
     </ItemGroup>
 
     <ItemGroup>
@@ -27,6 +28,10 @@
     
     <ItemGroup>
         <AvaloniaResource Include="Images\**\*.jpg" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Styles\Styles.axaml" />
     </ItemGroup>
 
 </Project>

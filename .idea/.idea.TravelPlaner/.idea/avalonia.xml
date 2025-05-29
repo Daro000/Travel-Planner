@@ -5,7 +5,9 @@
       <map>
         <entry key="TravelPlaner/App.axaml" value="TravelPlaner/TravelPlaner.csproj" />
         <entry key="TravelPlaner/MainWindow.axaml" value="TravelPlaner/TravelPlaner.csproj" />
+        <entry key="TravelPlaner/Styles/Styles.axaml" value="TravelPlaner/TravelPlaner.csproj" />
         <entry key="TravelPlaner/SummaryWindow.axaml" value="TravelPlaner/TravelPlaner.csproj" />
+        <entry key="TravelPlaner/styles.axaml" value="TravelPlaner/TravelPlaner.csproj" />
       </map>
     </option>
   </component>

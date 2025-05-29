@@ -1,10 +1,9 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="TravelPlaner.App"
-             RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
-
+             xmlns:fluent="clr-namespace:Avalonia.Themes.Fluent;assembly=Avalonia.Themes.Fluent"
+             x:Class="TravelPlaner.App">
     <Application.Styles>
-        <FluentTheme />
+        <fluent:FluentTheme/>
+        <StyleInclude Source="avares://TravelPlaner/Styles/Styles.axaml"/>
     </Application.Styles>
 </Application>

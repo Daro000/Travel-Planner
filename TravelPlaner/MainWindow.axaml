@@ -29,7 +29,7 @@
                 <ComboBoxItem Content="Polska"/>
             </ComboBox>
             
-            <WrapPanel Margin="0,5">
+            <WrapPanel Margin="10">
                 <CheckBox Content="Muzea" x:Name="MuseumCheck"/>
                 <CheckBox Content="Parki Narodowe" x:Name="ParksCheck"/>
                 <CheckBox Content="Zabytki" x:Name="MonumentsCheck"/>
